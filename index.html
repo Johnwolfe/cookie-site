@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>cookies</title>
+	<script src="cookies.js"></script>
+</head>
+<body>
+	<h1 id="site_name">My site</h1>
+	<hr>
+	<h3> about cookies</h3>
+	<form action="/">
+		<label for="name">Enter your name</label>
+		<input type="text" id="user_name">
+		<input type="submit" id="submit" onclick="nameDetective()">
+	</form>
+	<script>
+		var cookie_visitor =  Cookies.get("user_name");
+		if(cookie_visitor){
+			document.getElementById("site_name").innerHTML = cookie_visitor + ", welcome back!"
+		}
+		function nameDetective(){
+			var taco = document.getElementById('user_name').value;
+			Cookies.set("user_name", taco);
+		}
+	</script>
+
+</body>
+</html>
+
+
+
+
+
+
+
+
+
+
